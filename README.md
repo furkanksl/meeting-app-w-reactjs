@@ -1,3 +1,17 @@
+# Demo
+
+You can reach out the demo [here](basic-meeting-app.netlify.app) .
+Thanks to [netlify](https://www.netlify.com) .
+
+## What skills I learned about ReactJs from that project
+
+- Component specific styling
+- Routing (nested & normal)
+- Wrapper component
+- Navigate programatically
+- Working with context (provider)
+- Http request
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
