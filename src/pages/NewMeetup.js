@@ -1,4 +1,4 @@
-import { BASE_URL, METHOD_POST, CONTENT_TYPE_JSON } from "../base/Base";
+import { MEETUPS_URL, METHOD_POST, CONTENT_TYPE_JSON } from "../base/Base";
 import NewMeetupForm from "../components/new-meetup/NewMeetupForm";
 import { useNavigate } from "react-router-dom";
 
@@ -6,7 +6,7 @@ function NewMeetupPage() {
   const navigation = useNavigate();
   async function addNewMeetupHandler(meetupData) {
     try {
-      await fetch(BASE_URL + "meetups.json", {
+      await fetch(MEETUPS_URL, {
         method: METHOD_POST,
         body: JSON.stringify(meetupData),
         headers: CONTENT_TYPE_JSON,
