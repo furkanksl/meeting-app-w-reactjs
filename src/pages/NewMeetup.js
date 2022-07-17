@@ -1,9 +1,25 @@
-import { BASE_URL } from "../base/Base";
+import { BASE_URL, METHOD_POST, CONTENT_TYPE_JSON } from "../base/Base";
 import NewMeetupForm from "../components/new-meetup/NewMeetupForm";
+import { useNavigate } from "react-router-dom";
 
 function NewMeetupPage() {
-  function addNewMeetupHandler() {
-    console.log(BASE_URL);
+  const navigation = useNavigate();
+  async function addNewMeetupHandler(meetupData) {
+    try {
+      await fetch(BASE_URL + "meetups.json", {
+        method: METHOD_POST,
+        body: JSON.stringify(meetupData),
+        headers: CONTENT_TYPE_JSON,
+      });
+
+      // console.log("SUCCESSFUL!");
+
+      navigation("/");
+    } catch (error) {
+      console.log("FAILED TO ADDING NEW MEETING TO SERVER!");
+
+      console.log(error);
+    }
   }
 
   return (

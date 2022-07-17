@@ -8,7 +8,13 @@ function NewMeetupForm(props) {
   const addressInputRef = useRef();
   const descriptionInputRef = useRef();
 
-  function submitHandler(event) {
+  var isFormSubmitting = false;
+
+  async function submitHandler(event) {
+    if (isFormSubmitting) {
+      return null;
+    }
+
     event.preventDefault();
 
     const enteredTitle = titleInputRef.current.value;
@@ -23,8 +29,19 @@ function NewMeetupForm(props) {
       description: enteredDescription,
     };
 
-    props.onAddNewMeetup(meetupData);
+    isFormSubmitting = true;
+    await props.onAddNewMeetup(meetupData);
+
+    isFormSubmitting = false;
+    // clearForm();
   }
+
+  //   function clearForm() {
+  //     titleInputRef.current.value = "";
+  //     imageInputRef.current.value = "";
+  //     addressInputRef.current.value = "";
+  //     descriptionInputRef.current.value = "";
+  //   }
 
   return (
     <Card>
