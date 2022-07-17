@@ -1,6 +1,6 @@
 # Demo
 
-You can reach out the demo [here](basic-meeting-app.netlify.app) .
+You can reach out the demo [here](https://basic-meeting-app.netlify.app) .
 Thanks to [netlify](https://www.netlify.com) .
 
 ## What skills I learned about ReactJs from that project
