@@ -1,7 +1,10 @@
+import { BASE_URL } from "../base/Base";
 import NewMeetupForm from "../components/new-meetup/NewMeetupForm";
 
 function NewMeetupPage() {
-  function addNewMeetupHandler() {}
+  function addNewMeetupHandler() {
+    console.log(BASE_URL);
+  }
 
   return (
     <section>
